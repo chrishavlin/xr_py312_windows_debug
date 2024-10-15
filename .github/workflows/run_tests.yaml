@@ -24,5 +24,7 @@ jobs:
         python -m pip install xarray pytest pooch numpy netcdf4
     - name: List installed deps
       run: pip list
+    - name: print xr info
+      run: python -c "import xarray as xr; xr.show_versions()"
     - name: Run Tests
       run: pytest --color=yes .
