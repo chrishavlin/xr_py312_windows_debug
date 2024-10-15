@@ -21,7 +21,7 @@ jobs:
     - name: Install deps
       run: |
         python -m pip install --upgrade pip
-        python -m pip install xarray pytest pooch numpy netcdf4
+        python -m pip install xarray pytest pooch numpy netcdf4<1.7
     - name: List installed deps
       run: pip list
     - name: print xr info
