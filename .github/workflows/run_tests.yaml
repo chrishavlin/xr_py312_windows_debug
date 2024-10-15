@@ -10,6 +10,7 @@ jobs:
       matrix:
         platform: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ['3.11', '3.12']
+        fail-fast: false
 
     steps:
     - uses: actions/checkout@v4
@@ -20,7 +21,7 @@ jobs:
     - name: Install deps
       run: |
         python -m pip install --upgrade pip
-        python -m pip install xarray pytest pooch netcdf4
+        python -m pip install xarray pytest pooch netcdf4 numpy
     - name: List installed deps
       run: pip list
     - name: Run Tests
